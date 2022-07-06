@@ -1,0 +1,13 @@
+1. Make an API call to get posts showing on page (Use fetch) to populate them
+A file that makes the API calls
+A js component for posts
+We need to connect it to the src/index
+
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
