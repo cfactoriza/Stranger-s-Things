@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Post from './Post'
 import Register from './Register'
+import Login from './Login'
 
 import { getPosts } from '../api'
 
@@ -19,7 +20,8 @@ const App = () => {
        
     return(
         <div>
-        <Register />
+        <Login />
+        {/* <Register /> */}
         <Post posts={posts}/>
         </div>
     )

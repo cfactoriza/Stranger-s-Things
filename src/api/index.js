@@ -12,6 +12,7 @@ export async function getPosts(){
         throw error;
     }
 }
+
 export async function registerUser(userName, passWord){
     try {
         const data = await fetch (`${BASE}${cohortName}/users/register`, {
@@ -30,9 +31,28 @@ export async function registerUser(userName, passWord){
         const response = await data.json()
         const userToken = response.data.token
         localStorage.setItem("Token", userToken)
-        console.log(localStorage.getItem("Token"))
 
     } catch (error){
         throw error;
     }
+}
+
+export async function loginUser(userName, passWord){
+    fetch(`${BASE}${cohortName}/users/login`, {
+  method: "POST",
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    user: {
+      username: userName,
+      password: passWord
+    }
+  })
+}).then(response => response.json())
+  .then(result => {
+    const userToken = result.data.token
+    localStorage.setItem("Token", userToken)
+  })
+  .catch(console.error);
 }
