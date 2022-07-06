@@ -4,6 +4,7 @@ import Register from './Register'
 import Login from './Login'
 
 import { getPosts } from '../api'
+import Logout from './Logout'
 
 const App = () => {
     const [posts, setPostsList] = useState([]);
@@ -24,6 +25,7 @@ const App = () => {
         <Login setToken={setToken}/>
         <Register setToken={setToken} />
         <Post posts={posts}/>
+        <Logout setToken={setToken}/>
         </div>
     )
 
