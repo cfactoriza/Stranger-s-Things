@@ -13,7 +13,7 @@ export async function getPosts(){
     }
 }
 
-export async function registerUser(userName, passWord){
+export async function registerUser(userName, passWord, setToken){
     try {
         const data = await fetch (`${BASE}${cohortName}/users/register`, {
             method: "POST",
@@ -31,13 +31,14 @@ export async function registerUser(userName, passWord){
         const response = await data.json()
         const userToken = response.data.token
         localStorage.setItem("Token", userToken)
+        setToken(userToken)
 
     } catch (error){
         throw error;
     }
 }
 
-export async function loginUser(userName, passWord){
+export async function loginUser(userName, passWord, setToken){
     fetch(`${BASE}${cohortName}/users/login`, {
   method: "POST",
   headers: {
@@ -53,6 +54,7 @@ export async function loginUser(userName, passWord){
   .then(result => {
     const userToken = result.data.token
     localStorage.setItem("Token", userToken)
+    setToken(userToken)
   })
   .catch(console.error);
 }

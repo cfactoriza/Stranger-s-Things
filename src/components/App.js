@@ -7,6 +7,7 @@ import { getPosts } from '../api'
 
 const App = () => {
     const [posts, setPostsList] = useState([]);
+    const [token, setToken] = useState("")
 
     useEffect(() => {
         getPosts()
@@ -20,8 +21,8 @@ const App = () => {
        
     return(
         <div>
-        <Login />
-        {/* <Register /> */}
+        <Login setToken={setToken}/>
+        <Register setToken={setToken} />
         <Post posts={posts}/>
         </div>
     )
