@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Post from './Post'
+import Register from './Register'
 
 import { getPosts } from '../api'
 
@@ -17,7 +18,10 @@ const App = () => {
       }, []);
        
     return(
+        <div>
+        <Register />
         <Post posts={posts}/>
+        </div>
     )
 
 }

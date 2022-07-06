@@ -12,3 +12,27 @@ export async function getPosts(){
         throw error;
     }
 }
+export async function registerUser(userName, passWord){
+    try {
+        const data = await fetch (`${BASE}${cohortName}/users/register`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify ({
+                user: {
+                    username: userName,
+                    password: passWord
+                }
+            })
+
+        })
+        const response = await data.json()
+        const userToken = response.data.token
+        localStorage.setItem("Token", userToken)
+        console.log(localStorage.getItem("Token"))
+
+    } catch (error){
+        throw error;
+    }
+}
