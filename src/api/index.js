@@ -82,14 +82,32 @@ export async function createPost(token, title, description, price){
 }
 
 export async function showMyPosts(token){
-  fetch(`${BASE}${cohortName}/users/me`, {
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${token}`
-  },
-}).then(response => response.json())
-  .then(result => {
-    return result;
-  })
-  .catch(console.error);
+  try {
+    const data = await axios.get(`${BASE}${cohortName}/users/me`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+    }
+  )
+  return data.data.data.posts
+} catch (error) {
+    console.error(error)
+  }
+
 }
+
+
+// export async function showMyPosts(token){
+//   fetch(`${BASE}${cohortName}/users/me`, {
+//   headers: {
+//     'Content-Type': 'application/json',
+//     'Authorization': `Bearer ${token}`
+//   },
+// }).then(response => response.json())
+//   .then(result => {
+//     console.log(result)
+//     return result
+//   })
+//   .catch(console.error);
+// }

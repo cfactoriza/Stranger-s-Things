@@ -7,8 +7,10 @@ const Post = (props) => {
    
     async function handleClick(){
         setShowMyPosts(true)
-        
+        const data = await showMyPosts(token)
+        console.log(data)
     }
+
     return (
         <div>
         <h1>Posts</h1>
