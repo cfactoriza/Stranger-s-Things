@@ -13,7 +13,7 @@ const sendMessage = (props)=> {
     return(
         <form onSubmit={handleSubmit}>
             <label>Message</label>
-            <input type="text" id="content"></input>
+            <input type="text"></input>
             <button >Send Message</button>
         </form>
     )

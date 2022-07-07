@@ -1,7 +1,7 @@
 import React from "react";
 import { getPosts } from "../api";
 import DeleteButton from "./DeleteButton";
-import Messages from "./Messages";
+
 
 const fetchMyPosts = (props) => {
   const { setShowMyPosts, token, setPostsList, posts } = props;
@@ -16,7 +16,7 @@ const fetchMyPosts = (props) => {
       });
     setShowMyPosts(false);
   }
-
+console.log(posts)
   return (
     <div>
       Show My Posts
@@ -34,7 +34,6 @@ const fetchMyPosts = (props) => {
               token={token}
               postId={postId}
             />
-            <Messages token={token} postId={postId}/>
           </div>
         ) : null;
       })}
