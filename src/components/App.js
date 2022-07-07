@@ -30,7 +30,10 @@ const App = () => {
 
         {/* <Register setToken={setToken} /> */}
         <Post posts={posts}/>
-        <MakePost getPosts={getPosts} token={token} setPostsList={setPostsList}/>
+        {
+          token ? <MakePost getPosts={getPosts} token={token} setPostsList={setPostsList}/> : null
+        }
+        
         
         </div>
     )
