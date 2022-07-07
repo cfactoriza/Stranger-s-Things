@@ -1,10 +1,13 @@
 import React from 'react'
+import { showMyPosts } from '../api'
 
 
 const Post = (props) => {
-    const {posts, setShowMyPosts} = props
-    function handleClick(){
+    const {posts, setShowMyPosts, token} = props
+   
+    async function handleClick(){
         setShowMyPosts(true)
+        
     }
     return (
         <div>

@@ -34,7 +34,7 @@ const App = () => {
         {
           token ? <MakePost getPosts={getPosts} token={token} setPostsList={setPostsList}/> : null
         }
-        {showMyPosts ? <MyPosts setShowMyPosts ={setShowMyPosts} /> : <Post posts={posts} setShowMyPosts ={setShowMyPosts}/>}
+        {showMyPosts ? <MyPosts setShowMyPosts ={setShowMyPosts} token={token} setPostsList={setPostsList} posts={posts}/> : <Post posts={posts} setShowMyPosts ={setShowMyPosts} token = {token}/>}
         
         </div>
     )

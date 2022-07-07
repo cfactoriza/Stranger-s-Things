@@ -76,7 +76,20 @@ export async function createPost(token, title, description, price){
   })
 }).then(response => response.json())
   .then(result => {
-    console.log(result);
+    // console.log(result);
+  })
+  .catch(console.error);
+}
+
+export async function showMyPosts(token){
+  fetch(`${BASE}${cohortName}/users/me`, {
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  },
+}).then(response => response.json())
+  .then(result => {
+    return result;
   })
   .catch(console.error);
 }
