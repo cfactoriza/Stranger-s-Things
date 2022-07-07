@@ -58,3 +58,25 @@ export async function loginUser(userName, passWord, setToken){
   })
   .catch(console.error);
 }
+
+
+export async function createPost(token, title, description, price){
+  fetch(`${BASE}${cohortName}/posts`, {
+  method: "POST",
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  },
+  body: JSON.stringify({
+    post: {
+      title: title,
+      description: description,
+      price: price
+    }
+  })
+}).then(response => response.json())
+  .then(result => {
+    console.log(result);
+  })
+  .catch(console.error);
+}

@@ -3,8 +3,9 @@ A file that makes the API calls
 A js component for posts
 We need to connect it to the src/index
 
-2.
-3.
+2. Add the Register link and the router for the register form. Add an alert for the username as well, if it has been used before
+
+3.Create a fetch call for the post and it needs to have the correct info
 4.
 5.
 6.

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import Post from './Post'
 import Register from './Register'
 import Login from './Login'
+import MakePost from './makePost'
+
 
 import { getPosts } from '../api'
 import Logout from './Logout'
@@ -22,10 +24,14 @@ const App = () => {
        
     return(
         <div>
-        <Login setToken={setToken}/>
-        <Register setToken={setToken} />
+        {
+          token ? <Logout setToken={setToken}/> : <Login setToken={setToken}/>
+        }
+
+        {/* <Register setToken={setToken} /> */}
         <Post posts={posts}/>
-        <Logout setToken={setToken}/>
+        <MakePost getPosts={getPosts} token={token} setPostsList={setPostsList}/>
+        
         </div>
     )
 

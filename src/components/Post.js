@@ -12,8 +12,8 @@ const Post = (props) => {
                 return (
                     <div key={idx}>
                     <h3>{post.title}</h3>
-                    <h4>{post.author.username}</h4>
-                    <p>{post.description}</p>
+                    <h4>{post.description}</h4>
+                    <p>{post.price}</p>
                     </div>
                 )
             })
