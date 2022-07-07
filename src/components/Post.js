@@ -3,12 +3,12 @@ import { showMyPosts } from '../api'
 
 
 const Post = (props) => {
-    const {posts, setShowMyPosts, token} = props
+    const {posts, setShowMyPosts, token, setPostsList} = props
    
     async function handleClick(){
-        setShowMyPosts(true)
         const data = await showMyPosts(token)
-        console.log(data)
+        setPostsList(data)
+        setShowMyPosts(true)
     }
 
     return (

@@ -22,7 +22,7 @@ const App = () => {
           .catch(error => {
             console.log("There was an error", error)
           });
-      }, [showMyPosts]);
+      }, []);
        
     return(
         <div>
@@ -34,7 +34,7 @@ const App = () => {
         {
           token ? <MakePost getPosts={getPosts} token={token} setPostsList={setPostsList}/> : null
         }
-        {showMyPosts ? <MyPosts setShowMyPosts ={setShowMyPosts} token={token} setPostsList={setPostsList} posts={posts}/> : <Post posts={posts} setShowMyPosts ={setShowMyPosts} token = {token}/>}
+        {showMyPosts ? <MyPosts setShowMyPosts ={setShowMyPosts} token={token} setPostsList={setPostsList} posts={posts}/> : <Post posts={posts} setPostsList={setPostsList} setShowMyPosts ={setShowMyPosts} token = {token}/>}
         
         </div>
     )
