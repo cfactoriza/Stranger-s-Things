@@ -2,7 +2,7 @@ import React from "react";
 import { registerUser } from "../api";
 
 const Register = (props) => {
-    const setToken = props.setToken
+  const setToken = props.setToken;
   async function handleSubmit(event) {
     event.preventDefault();
     const username = event.target[0].value;
@@ -12,9 +12,9 @@ const Register = (props) => {
       return alert("Passwords do not match");
     }
     registerUser(username, password, setToken);
-    event.target[0].value = ""
-    event.target[1].value = ""
-    event.target[2].value = ""
+    event.target[0].value = "";
+    event.target[1].value = "";
+    event.target[2].value = "";
   }
 
   return (
