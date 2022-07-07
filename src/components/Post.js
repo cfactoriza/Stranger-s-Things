@@ -2,11 +2,14 @@ import React from 'react'
 
 
 const Post = (props) => {
-    const {posts} = props
-
+    const {posts, setShowMyPosts} = props
+    function handleClick(){
+        setShowMyPosts(true)
+    }
     return (
         <div>
         <h1>Posts</h1>
+        <button onClick={handleClick} >Show my Posts</button>
         { 
             posts.map((post, idx)=>{
                 return (
