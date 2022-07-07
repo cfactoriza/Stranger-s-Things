@@ -105,3 +105,23 @@ export async function deletePost(token, postId) {
     console.error(error);
   }
 }
+
+export async function postMessage(token, postId, content) {
+  try {
+    await axios.post(`${BASE}${cohortName}/posts/${postId}`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        message: {
+          content: content
+        }
+      }
+      )
+    });
+    console.log("Message Sent", content)
+  } catch (error) {
+    console.error(error);
+  }
+}
