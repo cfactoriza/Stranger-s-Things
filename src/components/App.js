@@ -4,6 +4,7 @@ import Register from "./Register";
 import Login from "./Login";
 import MakePost from "./makePost";
 import MyPosts from "./MyPosts";
+import MyMessages from "./myMessages";
 
 import { getPosts } from "../api";
 import Logout from "./Logout";
@@ -12,6 +13,7 @@ const App = () => {
   const [posts, setPostsList] = useState([]);
   const [token, setToken] = useState("");
   const [showMyPosts, setShowMyPosts] = useState(false);
+  const [showMyMessages, setShowMyMessages] = useState(false);
 
   useEffect(() => {
     getPosts()
@@ -27,7 +29,7 @@ const App = () => {
     <div>
       {token ? <Logout setToken={setToken} /> : <Login setToken={setToken} />}
 
-      {/* <Register setToken={setToken} /> */}
+      <Register setToken={setToken} />
       {token ? (
         <MakePost
           getPosts={getPosts}
@@ -50,6 +52,11 @@ const App = () => {
           token={token}
         />
       )}
+      <button onClick={()=>{setShowMyMessages(true)}}>My Messages</button>
+      {
+        showMyMessages && token ? <MyMessages token={token} posts={posts}/> : null
+      }
+      
     </div>
   );
 };

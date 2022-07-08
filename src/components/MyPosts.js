@@ -16,7 +16,6 @@ const fetchMyPosts = (props) => {
       });
     setShowMyPosts(false);
   }
-console.log(posts)
   return (
     <div>
       Show My Posts

@@ -10,6 +10,7 @@ const Post = (props) => {
     setPostsList(data);
     setShowMyPosts(true);
   }
+
   return (
     <div>
       <h1>Posts</h1>

@@ -125,3 +125,17 @@ export async function postMessage(token, postId, content) {
     })
     .catch(console.error);
   }
+
+export async function showMyMessages(token) {
+  try {
+    const data = await axios.get(`${BASE}${cohortName}/users/me`, {
+      headers: {
+         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return data.data.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
