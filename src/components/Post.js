@@ -16,13 +16,19 @@ const Post = (props) => {
       <button onClick={handleClick}>Show my Posts</button>
       {posts.map((post, idx) => {
         let postId = post._id;
-        console.log(post.author.username)
+        let ownerStatus = false
+        if (token){
+          const owner = localStorage.getItem("username", username)
+        if (post.author.username === owner){
+          ownerStatus = true
+        }
+        }
         return (
           <div key={postId}>
             <h3>{post.title}</h3>
             <h4>{post.description}</h4>
             <p>{post.price}</p>
-            {token ? 
+            {token && !ownerStatus ? 
             <Messages token={token} postId={postId}/>
             :null}
             

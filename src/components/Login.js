@@ -8,6 +8,7 @@ const Login = (props) => {
     event.preventDefault();
     const username = event.target[0].value;
     const password = event.target[1].value;
+    localStorage.setItem("username", username);
     loginUser(username, password, setToken);
   }
 
