@@ -20,9 +20,9 @@ const Register = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <label>Username</label>
-      <input id="username"></input>
+      <input></input>
       <label>Password (8 characters minimum):</label>
-      <input id="password" type="password" minLength="8" required></input>
+      <input type="password" minLength="8" required></input>
       <label>Confirm Password</label>
       <input id="passwordconfirmation" type="password"></input>
       <button type="submit">Register</button>

@@ -9,3 +9,5 @@ export { default as DeleteButton } from "./DeleteButton";
 export { default as sendMessage} from "./Messages";
 export { default as MyMessages } from './myMessages';
 export { default as SearchForm} from './SearchForm';
+export { default as NavBar } from './NavBar';
+
