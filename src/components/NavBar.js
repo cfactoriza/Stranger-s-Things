@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Route, Link, NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logout from './Logout'
 
 const NavBar = (props) => {

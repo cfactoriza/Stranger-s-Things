@@ -1,22 +1,15 @@
 (Routes via React Router (This is a minimum; you could have more than just these routes. These routes may be named as you wish.):
 
-/posts
-/profile (with messages)
+
 /login and /register (this could alternatively be displayed in the profile instead of living in its own route)
 
-Unauthenticated Users should not be able to:
-Send a message to the author of any post
 
-Authenticated Users should be able to:
+Authenticated Users should be able to: (Use LocalStorage possibly for username)
 Send a message to the author of any post for which they are not the author
-See all messages they've received in a special view
 
 Authenticated Users should not be able to:
-Delete posts for which they are not the author
 Send a message to themselves
+
 
 Opportunity for EXTRA CREDIT of up to 5% added to your overall score. Authenticated Users would be delighted to be able to:
 Edit a post for which they are the author
-
-Add look for user in SearchForm
-add send messages is user is not owner, if owner sees view and is able to see his post

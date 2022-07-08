@@ -3,7 +3,6 @@ import { createPost } from "../api";
 
 const MakePost = (props) => {
   const { token, getPosts, setPostsList } = props;
-  // NEEDS TO PASS A TOKEN
   async function handleSubmit(event) {
     event.preventDefault();
     const title = event.target[0].value;

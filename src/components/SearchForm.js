@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Post from './Post'
 
 const SearchForm = (props) => {
@@ -32,8 +32,5 @@ const SearchForm = (props) => {
     </div>
   );
 };
-
-// const [posts, setPosts] = useState([]);
-// const [searchTerm, setSearchTerm] = useState('');
 
 export default SearchForm;

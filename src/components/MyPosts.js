@@ -3,7 +3,7 @@ import DeleteButton from "./DeleteButton";
 
 
 const MyPosts = (props) => {
-  const { setShowMyPosts, token, setPostsList, posts } = props;
+  const { token, setPostsList, posts } = props;
 
   
   return (

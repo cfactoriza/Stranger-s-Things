@@ -22,8 +22,6 @@ const MyMessages = (props) => {
         }
         getMyInfo()
     }, [])
-
-      // MATCH posts._id to message.post._id
      
     
 

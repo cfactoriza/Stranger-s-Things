@@ -1,16 +1,14 @@
 import React from "react";
 import { loginUser } from "../api";
 
+
 const Login = (props) => {
-  const setToken = props.setToken;
+  const {setToken } = props
   async function handleSubmit(event) {
     event.preventDefault();
     const username = event.target[0].value;
     const password = event.target[1].value;
-
     loginUser(username, password, setToken);
-    event.target[0].value = "";
-    event.target[1].value = "";
   }
 
   return (
