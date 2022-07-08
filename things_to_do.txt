@@ -1,14 +1,19 @@
-1. Make an API call to get posts showing on page (Use fetch) to populate them
-A file that makes the API calls
-A js component for posts
-We need to connect it to the src/index
+(Routes via React Router (This is a minimum; you could have more than just these routes. These routes may be named as you wish.):
 
-2. Add the Register link and the router for the register form. Add an alert for the username as well, if it has been used before
+/posts
+/profile (with messages)
+/login and /register (this could alternatively be displayed in the profile instead of living in its own route)
 
-3.Create a fetch call for the post and it needs to have the correct info
-4.
-5.
-6.
-7.
-8.
-9.
+Unauthenticated Users should not be able to:
+Send a message to the author of any post
+
+Authenticated Users should be able to:
+Send a message to the author of any post for which they are not the author
+See all messages they've received in a special view
+
+Authenticated Users should not be able to:
+Delete posts for which they are not the author
+Send a message to themselves
+
+Opportunity for EXTRA CREDIT of up to 5% added to your overall score. Authenticated Users would be delighted to be able to:
+Edit a post for which they are the author

@@ -5,6 +5,7 @@ import Login from "./Login";
 import MakePost from "./makePost";
 import MyPosts from "./MyPosts";
 import MyMessages from "./myMessages";
+import SearchForm from "./SearchForm";
 
 import { getPosts } from "../api";
 import Logout from "./Logout";
@@ -27,6 +28,7 @@ const App = () => {
 
   return (
     <div>
+      {posts ? <SearchForm posts={posts} setShowMyPosts={setShowMyPosts} token={token} setPostsList={setPostsList}/>: null}
       {token ? <Logout setToken={setToken} /> : <Login setToken={setToken} />}
 
       <Register setToken={setToken} />
