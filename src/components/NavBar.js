@@ -1,19 +1,10 @@
 import React from "react";
 import {BrowserRouter, Route, Link, NavLink} from 'react-router-dom';
+import Logout from './Logout'
 
-const NavBar = () => {
-    function handleHome(event){
-        event.preventDefault()
-        console.log("Take me home")
-    }
-    function handlePosts(event){
-        event.preventDefault()
-        console.log("Get my posts")
-    }
-    function handleProfile(event){
-        event.preventDefault()
-        console.log("Show my profile")
-    }
+const NavBar = (props) => {
+    const {setToken, token} = props
+   
   return (
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
@@ -34,14 +25,20 @@ const NavBar = () => {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <NavLink to="/" className="nav-link active" aria-current="page" onClick={handleHome}>Home</NavLink>
+              <NavLink to="/" className="nav-link active" aria-current="page" >Home</NavLink>
             </li>
             <li class="nav-item">
-            <NavLink to="/posts" className="nav-link active" aria-current="page" onClick={handlePosts}>Posts</NavLink>
+                <NavLink to="/posts" className="nav-link active" aria-current="page" >Posts</NavLink>
             </li>
             <li class="nav-item">
-            <NavLink to="/profile" className="nav-link active" aria-current="page" onClick={handleProfile}>Profile</NavLink>
+                <NavLink to="/profile" className="nav-link active" aria-current="page" >Profile</NavLink>
             </li>
+            { token ? 
+            <li class="nav-item">
+            <Logout setToken={setToken}/>
+            </li> : null
+            }
+            
           </ul>
         </div>
       </div>

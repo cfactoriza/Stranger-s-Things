@@ -1,25 +1,13 @@
 import React from "react";
-import { getPosts } from "../api";
 import DeleteButton from "./DeleteButton";
 
 
-const fetchMyPosts = (props) => {
+const MyPosts = (props) => {
   const { setShowMyPosts, token, setPostsList, posts } = props;
 
-  async function handleClick() {
-    await getPosts()
-      .then((posts) => {
-        setPostsList(posts.data.posts);
-      })
-      .catch((error) => {
-        console.log("There was an error", error);
-      });
-    setShowMyPosts(false);
-  }
+  
   return (
     <div>
-      Show My Posts
-      <button onClick={handleClick}>Show all Posts</button>
       {posts.map((post, idx) => {
         let postId = post._id;
         let postStatus = post.active;
@@ -40,4 +28,4 @@ const fetchMyPosts = (props) => {
   );
 };
 
-export default fetchMyPosts;
+export default MyPosts;

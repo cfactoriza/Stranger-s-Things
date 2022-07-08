@@ -17,3 +17,6 @@ Send a message to themselves
 
 Opportunity for EXTRA CREDIT of up to 5% added to your overall score. Authenticated Users would be delighted to be able to:
 Edit a post for which they are the author
+
+Add look for user in SearchForm
+add send messages is user is not owner, if owner sees view and is able to see his post
