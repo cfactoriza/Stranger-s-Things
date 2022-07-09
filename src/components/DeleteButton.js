@@ -13,7 +13,7 @@ const DeleteButton = (props) => {
     setShowMyPosts(false)
   }
 
-  return <button onClick={handleClick}>Delete</button>;
+  return <button class="btn btn-danger" onClick={handleClick}>Delete</button>;
 };
 
 export default DeleteButton;

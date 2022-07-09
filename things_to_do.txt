@@ -1,6 +1,2 @@
-(Routes via React Router (This is a minimum; you could have more than just these routes. These routes may be named as you wish.):
-
-/login and /register (this could alternatively be displayed in the profile instead of living in its own route)
-
 Opportunity for EXTRA CREDIT of up to 5% added to your overall score. Authenticated Users would be delighted to be able to:
 Edit a post for which they are the author
