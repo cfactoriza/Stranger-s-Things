@@ -1,8 +1,9 @@
 import React from "react";
 import { registerUser } from "../api";
+import NavBar  from "./NavBar";
 
 const Register = (props) => {
-  const setToken = props.setToken;
+  const {setToken, token} = props;
   async function handleSubmit(event) {
     event.preventDefault();
     const username = event.target[0].value;
@@ -18,6 +19,8 @@ const Register = (props) => {
   }
 
   return (
+    <>
+    <NavBar setToken={setToken} token={token} />
     <form onSubmit={handleSubmit}>
       <label>Username</label>
       <input></input>
@@ -27,6 +30,7 @@ const Register = (props) => {
       <input id="passwordconfirmation" type="password"></input>
       <button type="submit">Register</button>
     </form>
+    </>
   );
 };
 

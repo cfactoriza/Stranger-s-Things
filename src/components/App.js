@@ -4,6 +4,7 @@ import Home from "./Home"
 import Profile from './Profile'
 import Forum from './Forum'
 import { getPosts } from "../api";
+import Register from "./Register"; 
 
 const App = () => {
   const [posts, setPostsList] = useState([]);
@@ -56,6 +57,13 @@ const App = () => {
       token={token}
       setPostsList={setPostsList}
       posts={posts}
+      setToken={setToken}
+      />
+      } 
+      />
+      <Route exact path="/register" element={
+      <Register 
+      token={token}
       setToken={setToken}
       />
       } 

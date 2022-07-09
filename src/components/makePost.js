@@ -9,8 +9,10 @@ const MakePost = (props) => {
     const description = event.target[1].value;
     const price = event.target[2].value;
     await createPost(token, title, description, price);
-    getPosts()
+    await getPosts()
+    
       .then((posts) => {
+        console.log(posts)
         setPostsList(posts.data.posts);
       })
       .catch((error) => {

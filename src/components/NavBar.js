@@ -35,7 +35,11 @@ const NavBar = (props) => {
                 <NavLink to="/profile" className="nav-link active" aria-current="page" >Profile</NavLink>
             </li> : null
             }
-
+            { !token ? 
+            <li class="nav-item">
+              <NavLink to="/register" className="nav-link active" aria-current="page">Register</NavLink>
+            </li> : null
+            }
             { token ? 
             <li class="nav-item">
             <Logout setToken={setToken}/>
