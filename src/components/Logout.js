@@ -10,7 +10,7 @@ const Logout = (props) => {
     localStorage.clear();
     navigate("/");
   }
-  return <button onClick={clearToken}>Sign Out</button>;
+  return <button className="btn btn-dark" onClick={clearToken}>Sign Out</button>;
 };
 
 export default Logout;

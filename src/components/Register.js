@@ -1,9 +1,11 @@
 import React from "react";
 import { registerUser } from "../api";
 import NavBar  from "./NavBar";
+import { useNavigate } from "react-router-dom";
 
 const Register = (props) => {
   const {setToken, token} = props;
+  let navigate = useNavigate(); 
   async function handleSubmit(event) {
     event.preventDefault();
     const username = event.target[0].value;
@@ -12,10 +14,12 @@ const Register = (props) => {
     if (password != confirmPassword) {
       return alert("Passwords do not match");
     }
+    localStorage.setItem("username", username);
     registerUser(username, password, setToken);
     event.target[0].value = "";
     event.target[1].value = "";
     event.target[2].value = "";
+    navigate("/");
   }
 
   return (
