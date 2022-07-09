@@ -4,7 +4,7 @@ import Logout from './Logout'
 
 const NavBar = (props) => {
     const {setToken, token} = props
-   
+
   return (
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">

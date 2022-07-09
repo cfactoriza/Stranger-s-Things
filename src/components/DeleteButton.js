@@ -2,6 +2,7 @@ import React from "react";
 import { showMyPosts } from "../api";
 import { deletePost } from "../api";
 
+
 const DeleteButton = (props) => {
   const { token, postId, setPostsList } = props;
   async function handleClick(event) {

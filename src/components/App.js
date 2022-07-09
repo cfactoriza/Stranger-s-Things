@@ -9,6 +9,7 @@ const App = () => {
   const [posts, setPostsList] = useState([]);
   const [token, setToken] = useState("");
   const [showMyPost, setShowMyPosts] = useState(false);
+  const [searchingPost, setSearchingPost] = useState(false)
 
   useEffect(() => {
     getPosts()
@@ -49,6 +50,8 @@ const App = () => {
 
       <Route exact path="/posts" element={
       <Forum 
+      searchingPost={searchingPost}
+      setSearchingPost={setSearchingPost}
       setShowMyPosts={setShowMyPosts}
       token={token}
       setPostsList={setPostsList}

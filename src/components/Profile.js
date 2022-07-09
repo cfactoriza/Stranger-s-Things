@@ -11,7 +11,6 @@ const Profile = (props)=>{
 
     async function handleClick() {
         const data = await showMyPosts(token);
-        console.log(data)
         setMyPosts(data);
         setShowMyPosts(true);
       }

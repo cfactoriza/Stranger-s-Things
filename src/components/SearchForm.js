@@ -3,22 +3,29 @@ import Post from './Post'
 
 const SearchForm = (props) => {
   const [searchPost, setSearchPost] = useState([]);
-  const { posts, setShowMyPosts, token, setPostsList } = props;
+  const { posts, setShowMyPosts, token, setPostsList, setSearchingPost} = props;
   function handleChange(event) {
     const searchTerm = event.target.value;
+    console.log(searchTerm)
     function postMatches(post, text) {
       if (post.title.includes(text)) {
+        setSearchingPost(true)
         return true;
       } else if (post.description.includes(text)) {
+        setSearchingPost(true)
         return true;
       } else {
         return false;
       }
-    }
 
+    }
     const filteredPosts = posts.filter((post) => postMatches(post, searchTerm));
     const postsToDisplay = searchTerm.length ? filteredPosts : posts;
     setSearchPost(postsToDisplay);
+    if (postsToDisplay.length === 0) {
+      setSearchingPost(false) 
+    }
+    
   }
 
   return (
@@ -30,8 +37,6 @@ const SearchForm = (props) => {
         {
           searchPost.length > 0 ? <Post posts={searchPost} setShowMyPosts={setShowMyPosts} token={token} setPostsList={setPostsList}/> : null
         }
-        
-    
     </div>
   );
 };
