@@ -12,16 +12,6 @@ const App = () => {
   const [showMyPost, setShowMyPosts] = useState(false);
   const [searchingPost, setSearchingPost] = useState(false)
 
-  useEffect(() => {
-    getPosts()
-      .then((posts) => {
-        setPostsList(posts.data.posts);
-      })
-      .catch((error) => {
-        console.log("There was an error", error);
-      });
-  }, []);
-
   return (
     <BrowserRouter>
     <Routes>

@@ -2,25 +2,17 @@ import React from "react";
 import { createPost } from "../api";
 
 const MakePost = (props) => {
-  const { token, getPosts, setPostsList } = props;
+  const { token, getPosts, setPostsList, setShowMyPosts } = props;
   async function handleSubmit(event) {
     event.preventDefault();
     const title = event.target[0].value;
     const description = event.target[1].value;
     const price = event.target[2].value;
     await createPost(token, title, description, price);
-    await getPosts()
-    
-      .then((posts) => {
-        console.log(posts)
-        setPostsList(posts.data.posts);
-      })
-      .catch((error) => {
-        console.log("There was an error", error);
-      });
     event.target[0].value = "";
     event.target[1].value = "";
     event.target[2].value = "";
+    setShowMyPosts(false)
   }
 
   return (

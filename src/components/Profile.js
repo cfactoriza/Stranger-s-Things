@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import MyPosts from './MyPosts';
 import MakePost from './makePost'
 import MyMessages from './myMessages';
@@ -14,7 +14,9 @@ const Profile = (props)=>{
         setMyPosts(data);
         setShowMyPosts(true);
       }
-
+useEffect(()=>{
+  setShowMyPosts(false)
+},[])
     return (
     <>
     <NavBar setToken={setToken} token={token} />
@@ -22,6 +24,7 @@ const Profile = (props)=>{
     getPosts={getPosts}
     token={token}
     setPostsList={setPostsList}
+    setShowMyPosts={setShowMyPosts}
     />
     { showMyPost ? 
     <MyPosts
