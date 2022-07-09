@@ -6,13 +6,13 @@ const NavBar = (props) => {
     const {setToken, token} = props
 
   return (
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand">
+    <nav className="navbar navbar-expand-lg bg-light">
+      <div className="container-fluid">
+        <a className="navbar-brand">
           Stranger's Things
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
@@ -20,28 +20,28 @@ const NavBar = (props) => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
               <NavLink to="/" className="nav-link active" aria-current="page" >Home</NavLink>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
                 <NavLink to="/posts" className="nav-link active" aria-current="page" >Posts</NavLink>
             </li>
             {
-              token ?             <li class="nav-item">
+              token ?             <li className="nav-item">
                 <NavLink to="/profile" className="nav-link active" aria-current="page" >Profile</NavLink>
             </li> : null
             }
             { !token ? 
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink to="/register" className="nav-link active" aria-current="page">Register</NavLink>
             </li> : null
             }
             { token ? 
-            <li class="nav-item">
+            <li className="nav-item">
             <Logout setToken={setToken}/>
             </li> : null
             }
