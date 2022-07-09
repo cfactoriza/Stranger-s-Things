@@ -27,7 +27,10 @@ const SearchForm = (props) => {
         <label>Search Form</label>
         <input onChange={handleChange} placeholder="Enter keywords..."></input>
       </div>
-        <Post posts={searchPost} setShowMyPosts={setShowMyPosts} token={token} setPostsList={setPostsList}/>
+        {
+          searchPost.length > 0 ? <Post posts={searchPost} setShowMyPosts={setShowMyPosts} token={token} setPostsList={setPostsList}/> : null
+        }
+        
     
     </div>
   );

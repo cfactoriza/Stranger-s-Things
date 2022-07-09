@@ -30,9 +30,12 @@ const NavBar = (props) => {
             <li class="nav-item">
                 <NavLink to="/posts" className="nav-link active" aria-current="page" >Posts</NavLink>
             </li>
-            <li class="nav-item">
+            {
+              token ?             <li class="nav-item">
                 <NavLink to="/profile" className="nav-link active" aria-current="page" >Profile</NavLink>
-            </li>
+            </li> : null
+            }
+
             { token ? 
             <li class="nav-item">
             <Logout setToken={setToken}/>
