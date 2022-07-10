@@ -18,15 +18,17 @@ const Post = (props) => {
         }
         }
         return (
+          <section>
           <div key={postId}>
-            <h3>{post.title}</h3>
-            <h4>{post.description}</h4>
-            <p>{post.price}</p>
+            <h1>{post.title}</h1>
+            <h3>{post.description}</h3>
+            <h3>{post.price}</h3>
             {token && !ownerStatus ? 
             <Messages token={token} postId={postId}/>
             :null}
-            
           </div>
+          </section>
+          
         );
       })}
     </div>
@@ -34,3 +36,26 @@ const Post = (props) => {
 };
 
 export default Post;
+{/* <div class="list-group list-group-light">
+  <a
+    href="#"
+    class="list-group-item list-group-item-action px-3 border-0 active ripple"
+    aria-current="true"
+    >Ripple</a
+  >
+  <a
+    href="#"
+    class="list-group-item list-group-item-action px-3 border-0 ripple"
+    >Dapibus ac facilisis in</a
+  >
+  <a
+    href="#"
+    class="list-group-item list-group-item-action px-3 border-0 ripple"
+    >Morbi leo risus</a
+  >
+  <a
+    href="#"
+    class="list-group-item list-group-item-action px-3 border-0 ripple"
+    >Porta ac consectetur ac</a
+  >
+</div> */}
