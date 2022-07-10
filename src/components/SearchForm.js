@@ -9,6 +9,7 @@ const SearchForm = (props) => {
     const searchTerm = event.target.value;
     console.log(searchTerm);
     function postMatches(post, text) {
+      console.log(post)
       if (post.title.includes(text)) {
         setSearchingPost(true);
         return true;
@@ -30,17 +31,6 @@ const SearchForm = (props) => {
   return (
     <div>
 
-      {/* <div className="form-outline">
-        <input
-          type="search"
-          id="form1"
-          className="form-control"
-          placeholder="Type query"
-          aria-label="Search"
-          onChange={handleChange}
-        />
-        
-      </div> */}
       <section className="intro">
   <div className="bg-image h-100" style={{
           backgroundImage: "url(https://images.creativemarket.com/0.1.0/ps/5319914/3008/1003/m1/fpnw/wm0/_dsc60102-.jpg?1541415014&s=7c8a8e0bad89065f858412e2bc2e9c06)"}}>

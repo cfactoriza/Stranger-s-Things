@@ -8,13 +8,15 @@ const sendMessage = (props)=> {
         const content = event.target[0].value;
         postMessage(token, postId, content)
         event.target[0].value = ""
-
+        alert("Your message has been sent.")
     }
     return(
         <form onSubmit={handleSubmit}>
-            <label>Message</label>
-            <input type="text"></input>
-            <button >Send Message</button>
+            <label style={{color: "#D3D3D3", fontSize: "14px"}}>Send a message</label>
+            <div className="input-group input-group-sm mb-3">
+            <input  className="form-control" type="text" style={{paddingBottom: "0.5rem"}}></input>
+            </div>
+            <button className="btn btn-secondary btn-sm" >Send</button>
         </form>
     )
 
