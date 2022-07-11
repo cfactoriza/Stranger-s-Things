@@ -46,7 +46,7 @@ const Post = (props) => {
                 maxWidth: "18rem",
               }}
             >
-              <div className="card-header">{post.author.username}</div>
+              <div className="card-header">Seller: {post.author.username}</div>
               <div className="card-body">
                 <h5 className="card-title">{post.title}</h5>
                 <p className="card-text">{post.description}</p>
@@ -66,41 +66,3 @@ const Post = (props) => {
 };
 
 export default Post;
-
-{
-  /* <section>
-          <div key={postId}>
-            <h1>{post.title}</h1>
-            <h3>{post.description}</h3>
-            <h3>{post.price}</h3>
-            {token && !ownerStatus ? 
-            <Messages token={token} postId={postId}/>
-            :null}
-          </div>
-          </section> */
-}
-{
-  /* <div class="list-group list-group-light">
-  <a
-    href="#"
-    class="list-group-item list-group-item-action px-3 border-0 active ripple"
-    aria-current="true"
-    >Ripple</a
-  >
-  <a
-    href="#"
-    class="list-group-item list-group-item-action px-3 border-0 ripple"
-    >Dapibus ac facilisis in</a
-  >
-  <a
-    href="#"
-    class="list-group-item list-group-item-action px-3 border-0 ripple"
-    >Morbi leo risus</a
-  >
-  <a
-    href="#"
-    class="list-group-item list-group-item-action px-3 border-0 ripple"
-    >Porta ac consectetur ac</a
-  >
-</div> */
-}

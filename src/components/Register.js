@@ -84,20 +84,6 @@ htmlFor <div className="card mx-4 mx-md-5 shadow-5-strong" style={{
     </div>
   </div>
 </section>
-
-
-
-    {/* <form onSubmit={handleSubmit}>
-      <label>Username</label>
-      <input></input>
-      <label>Password (8 characters minimum):</label>
-      <input type="password" minLength="8" required></input>
-      <label>Confirm Password</label>
-      <input id="passwordconfirmation" type="password"></input>
-      <button type="submit">Register</button>
-    </form> */}
-
-
     </>
   );
 };
