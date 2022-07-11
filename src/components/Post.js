@@ -16,7 +16,7 @@ const Post = (props) => {
         flexGrow: "1",
         padding: "1.5rem",
         minHeight: "900px",
-        minWidth: "1000px"
+        minWidth: "1000px",
       }}
     >
       {posts.map((post, idx) => {
@@ -56,7 +56,7 @@ const Post = (props) => {
                 <p className="card-text" style={{ color: "green" }}>
                   {post.price}
                 </p>
-                
+
                 {token && !ownerStatus ? (
                   <Messages token={token} postId={postId} />
                 ) : null}

@@ -1,16 +1,14 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
-import Logout from './Logout'
+import { NavLink } from "react-router-dom";
+import Logout from "./Logout";
 
 const NavBar = (props) => {
-    const {setToken, token} = props
+  const { setToken, token } = props;
 
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
-        <a className="navbar-brand">
-          Strangers' Things
-        </a>
+        <a className="navbar-brand">Strangers' Things</a>
         <button
           className="navbar-toggler"
           type="button"
@@ -25,32 +23,57 @@ const NavBar = (props) => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink to="/" className="nav-link active" aria-current="page" >Home</NavLink>
+              <NavLink to="/" className="nav-link active" aria-current="page">
+                Home
+              </NavLink>
             </li>
             <li className="nav-item">
-                <NavLink to="/posts" className="nav-link active" aria-current="page" >Posts</NavLink>
+              <NavLink
+                to="/posts"
+                className="nav-link active"
+                aria-current="page"
+              >
+                Posts
+              </NavLink>
             </li>
-            {
-              token ?             <li className="nav-item">
-                <NavLink to="/profile" className="nav-link active" aria-current="page" >Profile</NavLink>
-            </li> : null
-            }
-            { !token ? 
-            <li className="nav-item">
-              <NavLink to="/register" className="nav-link active" aria-current="page">Register</NavLink>
-            </li> : null
-            }
-            {
-              token ?             <li className="nav-item">
-                <NavLink to="/createpost" className="nav-link active" aria-current="page" >Create Post</NavLink>
-            </li> : null
-            }
-            { token ? 
-            <li className="nav-item">
-            <Logout setToken={setToken}/>
-            </li> : null
-            }
-            
+            {token ? (
+              <li className="nav-item">
+                <NavLink
+                  to="/profile"
+                  className="nav-link active"
+                  aria-current="page"
+                >
+                  Profile
+                </NavLink>
+              </li>
+            ) : null}
+            {!token ? (
+              <li className="nav-item">
+                <NavLink
+                  to="/register"
+                  className="nav-link active"
+                  aria-current="page"
+                >
+                  Register
+                </NavLink>
+              </li>
+            ) : null}
+            {token ? (
+              <li className="nav-item">
+                <NavLink
+                  to="/createpost"
+                  className="nav-link active"
+                  aria-current="page"
+                >
+                  Create Post
+                </NavLink>
+              </li>
+            ) : null}
+            {token ? (
+              <li className="nav-item">
+                <Logout setToken={setToken} />
+              </li>
+            ) : null}
           </ul>
         </div>
       </div>

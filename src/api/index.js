@@ -69,13 +69,13 @@ export async function createPost(token, title, description, price, location) {
         title: title,
         description: description,
         price: price,
-        location: location
+        location: location,
       },
     }),
   })
     .then((response) => response.json())
     .then((result) => {
-      // console.log(result);
+      console.log(result);
     })
     .catch(console.error);
 }
@@ -108,30 +108,30 @@ export async function deletePost(token, postId) {
 }
 
 export async function postMessage(token, postId, content) {
-    await fetch(`${BASE}${cohortName}/posts/${postId}/messages`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+  await fetch(`${BASE}${cohortName}/posts/${postId}/messages`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      message: {
+        content: content,
       },
-      body: JSON.stringify({
-        message: {
-          content: content
-        }
-      }
-      )
-    }).then(response => response.json())
-    .then(result => {
-      // console.log(result);
+    }),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
     })
     .catch(console.error);
-  }
+}
 
 export async function showMyMessages(token) {
   try {
     const data = await axios.get(`${BASE}${cohortName}/users/me`, {
       headers: {
-         "Content-Type": "application/json",
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     });
@@ -141,24 +141,32 @@ export async function showMyMessages(token) {
   }
 }
 
-export async function editPost(token, postId, title, description, price, location){
+export async function editPost(
+  token,
+  postId,
+  title,
+  description,
+  price,
+  location
+) {
   fetch(`${BASE}${cohortName}/posts/${postId}`, {
-  method: "PATCH",
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${token}`
-  },
-  body: JSON.stringify({
-    post: {
-      title: title,
-      description: description,
-      price: price,
-      location: location,
-    }
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      post: {
+        title: title,
+        description: description,
+        price: price,
+        location: location,
+      },
+    }),
   })
-}).then(response => response.json())
-  .then(result => {
-    console.log(result);
-  })
-  .catch(console.error);
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+    })
+    .catch(console.error);
 }
