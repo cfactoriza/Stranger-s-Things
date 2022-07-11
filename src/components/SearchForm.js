@@ -58,6 +58,7 @@ const SearchForm = (props) => {
                             id="searchPosts"
                             className="form-control form-control-lg"
                             onChange={handleChange}
+                            autoComplete="off"
                           />
                           <label className="form-label" htmlFor="searchPosts">
                             Search for Posts

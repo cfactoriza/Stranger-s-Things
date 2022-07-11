@@ -14,7 +14,7 @@ const sendMessage = (props)=> {
         <form onSubmit={handleSubmit}>
             <label style={{color: "#D3D3D3", fontSize: "14px"}}>Send a message</label>
             <div className="input-group input-group-sm mb-3">
-            <input  className="form-control" type="text" style={{paddingBottom: "0.5rem"}}></input>
+            <input autoComplete="off" className="form-control" type="text" style={{paddingBottom: "0.5rem"}}></input>
             </div>
             <button className="btn btn-secondary btn-sm" >Send</button>
         </form>

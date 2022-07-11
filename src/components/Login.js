@@ -30,6 +30,7 @@ const Login = (props) => {
                     type="text"
                     id="userLogin"
                     className="form-control form-control-lg"
+                    autoComplete="off"
                   />
                   <label className="form-label" htmlFor="userLogin">
                     Username
@@ -41,6 +42,7 @@ const Login = (props) => {
                     type="password"
                     id="passLogin"
                     className="form-control form-control-lg"
+                    autoComplete="off"
                   />
                   <label className="form-label" htmlFor="passLogin">
                     Password

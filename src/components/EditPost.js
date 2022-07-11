@@ -66,6 +66,7 @@ const EditPost = (props) => {
                   className="form-control"
                   id="title"
                   placeholder={title}
+                  autoComplete="off"
                 ></input>
               </p>
               <p className="card-text">
@@ -73,6 +74,7 @@ const EditPost = (props) => {
                   className="form-control"
                   id="description"
                   placeholder={description}
+                  autoComplete="off"
                 ></input>
               </p>
               <p className="card-text">
@@ -80,6 +82,7 @@ const EditPost = (props) => {
                   id="price"
                   placeholder={price}
                   className="form-control"
+                  autoComplete="off"
                 ></input>
               </p>
               <p className="card-text">
@@ -87,6 +90,7 @@ const EditPost = (props) => {
                   id="location"
                   placeholder={location}
                   className="form-control"
+                  autoComplete="off"
                 ></input>
               </p>
               <button

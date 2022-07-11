@@ -51,6 +51,7 @@ const MakePost = (props) => {
                 className="form-control"
                 id="title"
                 placeholder="Type Title here..."
+                autoComplete="off"
               ></input>
             </p>
             <p className="card-text">
@@ -58,6 +59,7 @@ const MakePost = (props) => {
                 className="form-control"
                 id="description"
                 placeholder="Type Description here..."
+                autoComplete="off"
               ></input>
             </p>
             <p className="card-text">
@@ -65,6 +67,7 @@ const MakePost = (props) => {
                 id="price"
                 placeholder="Type price here..."
                 className="form-control"
+                autoComplete="off"
               ></input>
             </p>
             <p className="card-text">
@@ -72,6 +75,7 @@ const MakePost = (props) => {
                 id="location"
                 placeholder="Type location here..."
                 className="form-control"
+                autoComplete="off"
               ></input>
             </p>
             <button

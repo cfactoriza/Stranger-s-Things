@@ -56,6 +56,7 @@ const Register = (props) => {
                           type="text"
                           id="userReg"
                           className="form-control"
+                          autoComplete="off"
                         />
                         <label className="form-label" htmlFor="userReg">
                           Username
@@ -69,6 +70,7 @@ const Register = (props) => {
                       type="password"
                       id="passReg"
                       className="form-control"
+                      autoComplete="off"
                     />
                     <label className="form-label" htmlFor="passReg">
                       Password
@@ -80,6 +82,7 @@ const Register = (props) => {
                       type="password"
                       id="passConf"
                       className="form-control"
+                      autoComplete="off"
                     />
                     <label className="form-label" htmlFor="passConf">
                       Please confirm your password
@@ -92,6 +95,7 @@ const Register = (props) => {
                       type="checkbox"
                       value=""
                       id="form2Example33"
+                      autoComplete="off"
                     />
                     <label
                       className="form-check-label"
