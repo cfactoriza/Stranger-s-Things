@@ -11,22 +11,50 @@ const MyPosts = (props) => {
 
   
   return (
-    <div>
-      <button onClick = {handleClick}>Hide my Posts</button>
+    <div  style={{
+      display: "flex",
+      flexFlow: "row wrap",
+      alignItems: "flex-start",
+      flexGrow: "1",
+      padding: "1.5rem",
+    }}>
+      <button className="btn btn-secondary btn-sm" style={{margin:"auto"}} onClick = {handleClick}>Hide my Posts</button>
       {posts.map((post, idx) => {
         let postId = post._id;
         let postStatus = post.active;
         return postStatus ? (
-          <div key={idx}>
-            <h3>{post.title}</h3>
-            <h4>{post.description}</h4>
-            <p>{post.price}</p>
+          <div key={idx} style={{
+            flex: "1 0 2rem",
+            marginRight: "12px",
+            display: "flex",
+            flexDirection: "column",
+            padding: "0.5rem",
+           
+            
+          }}>
+            <div
+              className="card text-white bg-dark mb-3 "
+              style={{
+                maxWidth: "18rem",
+                margin: "auto",
+                minWidth: "250px",
+                minHeight: "175px",
+              }}
+            >
+              <div className="card-body">
+                <h5 className="card-title">{post.title}</h5>
+                <p className="card-text">{post.description}</p>
+                <p className="card-text" style={{ color: "green" }}>
+                  {post.price}
+                </p>
             <DeleteButton
               setPostsList={setPostsList}
               token={token}
               postId={postId}
               setShowMyPosts={setShowMyPosts}
             />
+          </div>
+          </div>
           </div>
         ) : null;
       })}
