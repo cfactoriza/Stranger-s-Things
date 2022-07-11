@@ -8,10 +8,10 @@ const SearchForm = (props) => {
   function handleChange(event) {
     const searchTerm = event.target.value;
     function postMatches(post, text) {
-      if (post.title.includes(text)) {
+      if (post.title.toLowerCase().includes(text)) {
         setSearchingPost(true);
         return true;
-      } else if (post.description.includes(text)) {
+      } else if (post.description.toLowerCase().includes(text)) {
         setSearchingPost(true);
         return true;
       } else {
@@ -34,7 +34,7 @@ const SearchForm = (props) => {
           backgroundImage: "url(https://images.creativemarket.com/0.1.0/ps/5319914/3008/1003/m1/fpnw/wm0/_dsc60102-.jpg?1541415014&s=7c8a8e0bad89065f858412e2bc2e9c06)"}}>
     <div className="mask d-flex align-items-center h-100" style={{backgroundColor: "rgba(0,0,0, 0.5)"}}>
       <div className="container">
-        <p className="h2 mb-4 text-white" style={{paddingTop: "1rem", textAlign:"center"}}>Stranger's Things, the best website to shop for items </p>
+        <p className="h2 mb-4 text-white" style={{paddingTop: "1rem", textAlign:"center"}}>Strangers' Things, the best website to shop for items </p>
         <div className="card">
           <div className="card-body p-4">
             <div className="row">

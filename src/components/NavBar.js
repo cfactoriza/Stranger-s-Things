@@ -9,7 +9,7 @@ const NavBar = (props) => {
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
         <a className="navbar-brand">
-          Stranger's Things
+          Strangers' Things
         </a>
         <button
           className="navbar-toggler"
