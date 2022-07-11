@@ -16,16 +16,29 @@ const MakePost = (props) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Title</label>
-      <input id="title"></input>
-      <label>Description</label>
-      <input id="description"></input>
-      <label>Price</label>
-      <input id="price"></input>
-      <button type="submit">Create Post</button>
+    <form onSubmit={handleSubmit}style={{
+      display: "flex",
+      justifyContent: "center"
+    }}>
+  <div
+              className="card text-white bg-dark mb-3 "
+              style={{
+                maxWidth: "18rem"
+              }}
+            >
+              <div className="card-header">{localStorage.getItem("username")}</div>
+              <div className="card-body" style={{textAlign: "center"}}>
+                <p className="card-text"><input id="title" placeholder="Type Title here..."></input></p>
+                <p className="card-text"><input id="description" placeholder="Type Description here..."></input></p>
+                <p className="card-text">
+                <input id="price" placeholder="Type price here..."></input>
+                </p>
+                <button className="btn btn-secondary btn-sm" type="submit">Create Post</button>
+              </div>
+            </div>
     </form>
   );
 };
 
 export default MakePost;
+

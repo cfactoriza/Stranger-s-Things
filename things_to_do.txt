@@ -1,6 +1,6 @@
 Opportunity for EXTRA CREDIT of up to 5% added to your overall score. Authenticated Users would be delighted to be able to:
 
-Update Welcome Page
+
 Figure out the re-rendering bug on the Profile page
 Style the Make Post form
 Style the Show my Posts and the Messages to me and from me
