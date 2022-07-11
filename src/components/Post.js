@@ -52,9 +52,11 @@ const Post = (props) => {
               <div className="card-body">
                 <h5 className="card-title">{post.title}</h5>
                 <p className="card-text">{post.description}</p>
+                <p className="card-text">Location: {post.location}</p>
                 <p className="card-text" style={{ color: "green" }}>
                   {post.price}
                 </p>
+                
                 {token && !ownerStatus ? (
                   <Messages token={token} postId={postId} />
                 ) : null}

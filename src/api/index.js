@@ -139,3 +139,5 @@ export async function showMyMessages(token) {
     console.error(error);
   }
 }
+
+export async function editPost(){}

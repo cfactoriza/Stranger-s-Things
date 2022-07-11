@@ -29,7 +29,10 @@ const MyMessages = (props) => {
   return (
     <div>
       <h4 style={{paddingLeft: "2rem"}}>Messages to Me</h4>
-      <div class="list-group">
+      <div className="list-group">
+      {
+        receivedMessages.length === 0 ? <p style={{marginLeft: "2rem"}}>You don't have any messages</p> : null
+      }
         {receivedMessages.map((message, idx) => {
           return (
             <div key={idx}>
@@ -47,7 +50,10 @@ const MyMessages = (props) => {
         })}
       </div>
       <h4 style={{paddingLeft: "2rem"}}>Messages From Me</h4>
-      <div class="list-group">
+      <div className="list-group">
+      {
+        sentMessages.length === 0 ? <p style={{marginLeft: "2rem"}}>You haven't sent any messages</p> : null
+      }
       {sentMessages.map((message, idx) => {
         return (
           <div key={idx}>

@@ -1,6 +1,6 @@
 import React from "react";
 import DeleteButton from "./DeleteButton";
-
+import EditButton from './EditButton'
 
 const MyPosts = (props) => {
   const { token, setPostsList, posts, setShowMyPosts } = props;
@@ -19,6 +19,9 @@ const MyPosts = (props) => {
       padding: "1.5rem",
     }}>
       <button className="btn btn-secondary btn-sm" style={{margin:"auto"}} onClick = {handleClick}>Hide my Posts</button>
+      {
+        posts.length === 0 ? <p style={{margin: "auto"}}>You don't have any posts</p> : null
+      }
       {posts.map((post, idx) => {
         let postId = post._id;
         let postStatus = post.active;
@@ -47,12 +50,16 @@ const MyPosts = (props) => {
                 <p className="card-text" style={{ color: "green" }}>
                   {post.price}
                 </p>
+            <div style={{justifyContent: "space-between", display: "flex"}}>
             <DeleteButton
               setPostsList={setPostsList}
               token={token}
               postId={postId}
               setShowMyPosts={setShowMyPosts}
             />
+            <EditButton
+            />
+            </div>
           </div>
           </div>
           </div>

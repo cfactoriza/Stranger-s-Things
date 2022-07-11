@@ -1,7 +1,6 @@
 Opportunity for EXTRA CREDIT of up to 5% added to your overall score. Authenticated Users would be delighted to be able to:
 
 
-Figure out the re-rendering bug on the Profile page
 Edit a post for which they are the author
 
 CLEAN UP

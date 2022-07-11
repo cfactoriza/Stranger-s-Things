@@ -14,10 +14,11 @@ const Profile = (props)=>{
         setMyPosts(data);
         setShowMyPosts(true);
       }
-      
+
     useEffect(()=>{
       setShowMyPosts(false)
     },[])
+
     return (
     <>
     <NavBar setToken={setToken} token={token} />
