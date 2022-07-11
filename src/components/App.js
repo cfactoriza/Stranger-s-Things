@@ -5,6 +5,7 @@ import Profile from './Profile'
 import Forum from './Forum'
 import { getPosts } from "../api";
 import Register from "./Register"; 
+import CreateAPost from "./CreateAPost";
 
 const App = () => {
   const [posts, setPostsList] = useState([]);
@@ -58,7 +59,16 @@ const App = () => {
       />
       } 
       />
-
+      <Route exact path ="/createpost" element={
+      <CreateAPost 
+      token={token}
+      getPosts={getPosts}
+      setToken={setToken}
+      setPostsList={setPostsList}
+      setShowMyPosts={setShowMyPosts}
+      />
+      }
+      />
     </Routes>
     </BrowserRouter>
   );

@@ -16,6 +16,7 @@ const MakePost = (props) => {
   }
 
   return (
+    <div style={{backgroundImage: 'url("https://www.ivins.com/wp-content/uploads/2017/02/website-design-background.png")', minHeight: "900px", minWidth: "1000px"}}>
     <form onSubmit={handleSubmit}style={{
       display: "flex",
       justifyContent: "center"
@@ -23,20 +24,25 @@ const MakePost = (props) => {
   <div
               className="card text-white bg-dark mb-3 "
               style={{
-                maxWidth: "18rem"
+                minWidth: "400px",
+                minHeight: "350px",
+                marginTop: "5rem",
+                textAlign: "center"
               }}
             >
+                <h5 style={{textAlign: "center", marginTop: "1rem"}}>Post your item to sell</h5>
               <div className="card-header">{localStorage.getItem("username")}</div>
-              <div className="card-body" style={{textAlign: "center"}}>
-                <p className="card-text"><input id="title" placeholder="Type Title here..."></input></p>
-                <p className="card-text"><input id="description" placeholder="Type Description here..."></input></p>
+              <div className="card-body">
+                <p className="card-text"><input className="form-control" id="title" placeholder="Type Title here..."></input></p>
+                <p className="card-text"><input className="form-control" id="description" placeholder="Type Description here..."></input></p>
                 <p className="card-text">
-                <input id="price" placeholder="Type price here..."></input>
+                <input id="price" placeholder="Type price here..." className="form-control"></input>
                 </p>
-                <button className="btn btn-secondary btn-sm" type="submit">Create Post</button>
+                <button className="btn btn-secondary btn-sm" style={{marginTop: "2rem"}} type="submit">Create Post</button>
               </div>
             </div>
     </form>
+    </div>
   );
 };
 

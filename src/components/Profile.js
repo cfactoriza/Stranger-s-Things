@@ -14,18 +14,13 @@ const Profile = (props)=>{
         setMyPosts(data);
         setShowMyPosts(true);
       }
-useEffect(()=>{
-  setShowMyPosts(false)
-},[])
+      
+    useEffect(()=>{
+      setShowMyPosts(false)
+    },[])
     return (
     <>
     <NavBar setToken={setToken} token={token} />
-    <MakePost
-    getPosts={getPosts}
-    token={token}
-    setPostsList={setPostsList}
-    setShowMyPosts={setShowMyPosts}
-    />
     { showMyPost ? 
     <MyPosts
     setShowMyPosts={setShowMyPosts}
@@ -33,7 +28,7 @@ useEffect(()=>{
     setPostsList={setPostsList}
     posts={myPosts}
     />
-    : <button className="btn btn-secondary btn-sm" style={{marginLeft: "2rem"}} onClick={handleClick}>Show my Posts</button>
+    : <button className="btn btn-secondary btn-sm" style={{marginLeft: "2rem", marginTop: "1rem"}} onClick={handleClick}>Show my Posts</button>
     }
 
     <MyMessages token={token} posts={posts}/>

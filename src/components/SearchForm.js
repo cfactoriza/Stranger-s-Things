@@ -7,9 +7,7 @@ const SearchForm = (props) => {
     props;
   function handleChange(event) {
     const searchTerm = event.target.value;
-    console.log(searchTerm);
     function postMatches(post, text) {
-      console.log(post)
       if (post.title.includes(text)) {
         setSearchingPost(true);
         return true;

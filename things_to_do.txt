@@ -2,7 +2,6 @@ Opportunity for EXTRA CREDIT of up to 5% added to your overall score. Authentica
 
 
 Figure out the re-rendering bug on the Profile page
-Button to create Post
 Edit a post for which they are the author
 
 CLEAN UP

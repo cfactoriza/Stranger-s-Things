@@ -15,6 +15,8 @@ const Post = (props) => {
         alignItems: "flex-start",
         flexGrow: "1",
         padding: "1.5rem",
+        minHeight: "900px",
+        minWidth: "1000px"
       }}
     >
       {posts.map((post, idx) => {

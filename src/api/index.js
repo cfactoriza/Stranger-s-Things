@@ -121,7 +121,7 @@ export async function postMessage(token, postId, content) {
       )
     }).then(response => response.json())
     .then(result => {
-      console.log(result);
+      // console.log(result);
     })
     .catch(console.error);
   }

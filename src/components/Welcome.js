@@ -3,7 +3,7 @@ import React from "react";
 const Welcome = () => {
   const username = localStorage.getItem("username");
   return (
-    <section class="vh-100">
+    <section className="vh-100">
       <div className="container-fluid">
         <div className="row">
           <div className="col-sm-6 text-black d-flex align-items-center">
