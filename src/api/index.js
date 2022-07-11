@@ -57,7 +57,7 @@ export async function loginUser(userName, passWord, setToken) {
     .catch(console.error);
 }
 
-export async function createPost(token, title, description, price) {
+export async function createPost(token, title, description, price, location) {
   fetch(`${BASE}${cohortName}/posts`, {
     method: "POST",
     headers: {
@@ -69,6 +69,7 @@ export async function createPost(token, title, description, price) {
         title: title,
         description: description,
         price: price,
+        location: location
       },
     }),
   })
@@ -140,4 +141,24 @@ export async function showMyMessages(token) {
   }
 }
 
-export async function editPost(){}
+export async function editPost(token, postId, title, description, price, location){
+  fetch(`${BASE}${cohortName}/posts/${postId}`, {
+  method: "PATCH",
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
+  },
+  body: JSON.stringify({
+    post: {
+      title: title,
+      description: description,
+      price: price,
+      location: location,
+    }
+  })
+}).then(response => response.json())
+  .then(result => {
+    console.log(result);
+  })
+  .catch(console.error);
+}

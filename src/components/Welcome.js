@@ -8,7 +8,7 @@ const Welcome = () => {
         <div className="row">
           <div className="col-sm-6 text-black d-flex align-items-center">
             <div className="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-              <h1>Welcome to Strangers Thing's {username}</h1>
+              <h1>Welcome to Strangers' Things {username}</h1>
             </div>
           </div>
           <div className="col-sm-6 px-0 d-none d-sm-block">

@@ -8,11 +8,12 @@ const MakePost = (props) => {
     const title = event.target[0].value;
     const description = event.target[1].value;
     const price = event.target[2].value;
-    await createPost(token, title, description, price);
+    const location = event.target[3].value
+    await createPost(token, title, description, price, location);
     event.target[0].value = "";
     event.target[1].value = "";
     event.target[2].value = "";
-    setShowMyPosts(false)
+    event.target[3].value = "";
   }
 
   return (
@@ -33,11 +34,10 @@ const MakePost = (props) => {
                 <h5 style={{textAlign: "center", marginTop: "1rem"}}>Post your item to sell</h5>
               <div className="card-header">{localStorage.getItem("username")}</div>
               <div className="card-body">
-                <p className="card-text"><input className="form-control" id="title" placeholder="Type Title here..."></input></p>
+                <p className="card-text"><input className="form-control" id="title" placeholder="Type Title here..." ></input></p>
                 <p className="card-text"><input className="form-control" id="description" placeholder="Type Description here..."></input></p>
-                <p className="card-text">
-                <input id="price" placeholder="Type price here..." className="form-control"></input>
-                </p>
+                <p className="card-text"><input id="price" placeholder="Type price here..." className="form-control"></input></p>
+                <p className="card-text"><input id="location" placeholder="Type location here..." className="form-control"></input></p>
                 <button className="btn btn-secondary btn-sm" style={{marginTop: "2rem"}} type="submit">Create Post</button>
               </div>
             </div>

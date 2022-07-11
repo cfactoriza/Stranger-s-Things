@@ -15,3 +15,4 @@ export { default as Profile } from './Profile';
 export { default as Forum } from './Forum';
 export { default as Welcome} from "./Welcome"
 export { default as CreateAPost} from "./CreateAPost"
+export { default as EditPost} from "./EditPost"

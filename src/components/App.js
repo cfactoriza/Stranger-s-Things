@@ -6,12 +6,17 @@ import Forum from './Forum'
 import { getPosts } from "../api";
 import Register from "./Register"; 
 import CreateAPost from "./CreateAPost";
+import EditPost from './EditPost'
 
 const App = () => {
   const [posts, setPostsList] = useState([]);
   const [token, setToken] = useState("");
   const [showMyPost, setShowMyPosts] = useState(false);
   const [searchingPost, setSearchingPost] = useState(false)
+  const [price, setPrice] = useState("")
+  const [title, setTitle] = useState("")
+  const [description, setDescription] = useState("")
+  const [location, setLocation] = useState("")
 
   return (
     <BrowserRouter>
@@ -36,6 +41,10 @@ const App = () => {
       getPosts={getPosts}
       setToken={setToken}
       showMyPost={showMyPost}
+      setPrice={setPrice}
+      setTitle={setTitle}
+      setDescription={setDescription}
+      setLocation={setLocation}
       />
       } 
       />
@@ -68,6 +77,21 @@ const App = () => {
       setShowMyPosts={setShowMyPosts}
       />
       }
+      />
+      <Route path ="/editpost/:postId" element={
+      <EditPost 
+      token={token}
+      getPosts={getPosts}
+      setToken={setToken}
+      setPostsList={setPostsList}
+      setShowMyPosts={setShowMyPosts}
+      price={price}
+      title={title}
+      description={description}
+      location={location}
+      />
+      } 
+
       />
     </Routes>
     </BrowserRouter>

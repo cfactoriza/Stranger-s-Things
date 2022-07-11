@@ -3,7 +3,7 @@ import DeleteButton from "./DeleteButton";
 import EditButton from './EditButton'
 
 const MyPosts = (props) => {
-  const { token, setPostsList, posts, setShowMyPosts } = props;
+  const { token, setPostsList, posts, setShowMyPosts, setTitle, setDescription, setPrice, setLocation } = props;
   function handleClick(event){
     event.preventDefault;
     setShowMyPosts(false)
@@ -47,6 +47,7 @@ const MyPosts = (props) => {
               <div className="card-body">
                 <h5 className="card-title">{post.title}</h5>
                 <p className="card-text">{post.description}</p>
+                <p className="card-text">{post.location}</p>
                 <p className="card-text" style={{ color: "green" }}>
                   {post.price}
                 </p>
@@ -58,6 +59,15 @@ const MyPosts = (props) => {
               setShowMyPosts={setShowMyPosts}
             />
             <EditButton
+              postId={postId}
+              title={post.title}
+              description={post.description}
+              location={post.location}
+              price = {post.price}
+              setPrice={setPrice}
+              setTitle={setTitle}
+              setDescription={setDescription}
+              setLocation={setLocation}
             />
             </div>
           </div>
